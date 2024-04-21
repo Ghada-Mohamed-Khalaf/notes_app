@@ -12,7 +12,7 @@ class CustomTextField extends StatelessWidget {
       cursorColor: KPrimaryColor,
       maxLines: maxLines,
       decoration: InputDecoration(
-        hintText: "Title",
+        hintText: hint,
           hintStyle:TextStyle(
             color: KPrimaryColor,
           ) ,

@@ -23,8 +23,8 @@ class AddNoteBottomSheet extends StatelessWidget {
             ],
           ),
         ),
-
     );
+
 
 
   }

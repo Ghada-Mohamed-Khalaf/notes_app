@@ -12,11 +12,11 @@ final IconData icon;
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-         Text(title,style: TextStyle(fontSize: 26, ),),
+         Text(title,style: const TextStyle(fontSize: 26, ),),
 
           CustomSearchIcon(
 
-            icon: icon, title:title,
+            icon: icon,
           ),
 
 

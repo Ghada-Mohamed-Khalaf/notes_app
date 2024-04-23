@@ -19,11 +19,16 @@ class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   }
 }
 
-class addNoteForm extends StatelessWidget {
+class addNoteForm extends StatefulWidget {
   const addNoteForm({
     super.key,
   });
 
+  @override
+  State<addNoteForm> createState() => _addNoteFormState();
+}
+
+class _addNoteFormState extends State<addNoteForm> {
   @override
   Widget build(BuildContext context) {
     return const Padding(

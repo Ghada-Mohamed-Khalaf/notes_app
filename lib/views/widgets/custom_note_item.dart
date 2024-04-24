@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notes_app/views/widgets/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
@@ -7,16 +8,16 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding:  EdgeInsets.all(16.0.r),
       child: GestureDetector(
         onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context){
-            return const EditNoteView();
+            return  EditNoteView();
           }
           ));
         },
         child: Container(
-          padding: const EdgeInsets.only(top: 24,bottom: 8,left: 16),
+          padding: EdgeInsets.only(top: 24.h ,bottom: 8.h,left: 16.h),
           decoration: BoxDecoration(
             color: const Color(0xffFFCC80),
             borderRadius: BorderRadius.circular(16),
@@ -25,21 +26,21 @@ class NoteItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                  title: const Text(
+                  title:  Text(
                     "Flutter Tips",
-                    style: TextStyle(color: Colors.black,fontSize: 24),
+                    style: TextStyle(color: Colors.black,fontSize: 24.sp),
                   ),
                   subtitle:  Padding(
-                    padding: const EdgeInsets.only(top: 16,bottom: 16),
+                    padding:  EdgeInsets.only(top: 16.h,bottom: 16.h),
                     child: Text("Build your career with ghada mohamed",
-                        style: TextStyle(color: Colors.black.withOpacity(.5),fontSize: 20)),
+                        style: TextStyle(color: Colors.black.withOpacity(.5),fontSize: 20.sp)),
                   ),
                   trailing: IconButton(
                     onPressed: () {},
-                    icon: const Icon(Icons.delete, color: Colors.black,size: 30,),
+                    icon: Icon(Icons.delete, color: Colors.black,size: 30.sp,),
                   )),
               Padding(
-                padding: const EdgeInsets.only(right: 24),
+                padding:  EdgeInsets.only(right: 24),
                 child: Text(
                   "May15,2024",
                   style: TextStyle(color: Colors.black.withOpacity(.5)),

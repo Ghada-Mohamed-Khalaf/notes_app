@@ -3,20 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notes_app/views/constant.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
-
+  const CustomButton({super.key, this.onTap});
+ final void Function()?onTap;
   @override
   Widget build(BuildContext context) {
-    return  Container(
-
-      height: 55.h,
-      decoration: BoxDecoration(
-        color: kPrimaryColor,
-        borderRadius: BorderRadius.circular(16),
+    return  GestureDetector(
+      onTap: onTap,
+      child: Container(
+      
+        height: 55.h,
+        decoration: BoxDecoration(
+          color: kPrimaryColor,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child:   Center(child: Text("add",style: TextStyle(color: Colors.black,fontSize: 18.sp,fontWeight: FontWeight.bold),)),
+      
+      
       ),
-      child:   Center(child: Text("add",style: TextStyle(color: Colors.black,fontSize: 18.sp,fontWeight: FontWeight.bold),)),
-
-
     );
   }
 }

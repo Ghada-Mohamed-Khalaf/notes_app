@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notes_app/views/widgets/custom_button.dart';
@@ -13,40 +14,46 @@ class AddNoteBottomSheet extends StatefulWidget {
 class _AddNoteBottomSheetState extends State<AddNoteBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    return  const addNoteForm();
+    return  const AddNoteForm();
 
 
 
   }
 }
 
-class addNoteForm extends StatefulWidget {
-  const addNoteForm({
+class AddNoteForm extends StatefulWidget {
+  const AddNoteForm({
     super.key,
   });
 
   @override
-  State<addNoteForm> createState() => _addNoteFormState();
+  State<AddNoteForm> createState() => _AddNoteFormState();
 }
 
-class _addNoteFormState extends State<addNoteForm> {
+class _AddNoteFormState extends State<AddNoteForm> {
+ final GlobalKey<FormState> formKey = GlobalKey();
+ AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return  Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: 30.h,),
-              CustomTextField(hint: 'title',),
-              SizedBox(height: 16.h,),
-              CustomTextField(hint: 'content',maxLines: 5,),
-              SizedBox(height: 30.h,),
+          child: Form(
+            key: formKey,
+            autovalidateMode:autovalidateMode ,
+            child: Column(
+              children: [
+                SizedBox(height: 30.h,),
+                CustomTextField(hint: 'title',),
+                SizedBox(height: 16.h,),
+                CustomTextField(hint: 'content',maxLines: 5,),
+                SizedBox(height: 30.h,),
+            
+                CustomButton(),
 
-              CustomButton(),
-
-            ],
+              ],
+            ),
           ),
         ),
     );

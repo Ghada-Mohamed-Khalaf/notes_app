@@ -1,12 +1,19 @@
-abstract class AddNoteState{}
-class AddNoteInitial extends AddNoteState{}
-class AddNoteLoading extends AddNoteState{}
-class AddNoteSuccess extends AddNoteState{}
-class AddNoteFailure extends AddNoteState {
-  final String errMessage;
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_notes/add_note_state.dart';
+import 'package:notes_app/cubits/add_notes/add_note_state.dart';
+import 'package:notes_app/cubits/add_notes/add_note_state.dart';
+import 'package:notes_app/cubits/add_notes/add_note_state.dart';
+import 'package:notes_app/models/note_model.dart';
 
-  AddNoteFailure(this.errMessage);
+class AddNoteCubit extends Cubit<AddNoteState>{
+  AddNoteCubit():super(AddNoteInitial());
+  addNote(NoteModel note)
+
 }
+
+
+
+
 
 
 

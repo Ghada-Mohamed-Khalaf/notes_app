@@ -10,7 +10,9 @@ import 'package:notes_app/views/widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/custom_text_field.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
-  const AddNoteBottomSheet({super.key});
+   AddNoteBottomSheet({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +20,19 @@ class AddNoteBottomSheet extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child:  BlocConsumer<AddNoteCubit,AddNoteState>(
         listener: (context,state){
+          if(state is AddNoteFailure){
+           print("failed ${state.errMessage}");
+          }
+          if(state is AddNoteSuccess){
+            Navigator.pop(context);
+
+          }
 
         },
         builder: (context,state){
 
 
-   return ModalProgressHUD( inAsyncCall: ,
+   return ModalProgressHUD( inAsyncCall: state is AddNoteLoading ? true:false,
        child: const AddNoteForm());
     },
       ),

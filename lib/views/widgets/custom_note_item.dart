@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +14,14 @@ class NoteItem extends StatelessWidget {
       child: GestureDetector(
         onTap: (){
           Navigator.push(context, MaterialPageRoute(builder: (context){
-            return  EditNoteView();
+            return  const EditNoteView();
           }
           ));
         },
         child: Container(
           padding: EdgeInsets.only(top: 24.h ,bottom: 8.h,left: 16.h),
           decoration: BoxDecoration(
-            color: const Color(0xffFFCC80),
+            color:  Color(note.color),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
@@ -27,12 +29,12 @@ class NoteItem extends StatelessWidget {
             children: [
               ListTile(
                   title:  Text(
-                    "Flutter Tips",
+                   note.title,
                     style: TextStyle(color: Colors.black,fontSize: 24.sp),
                   ),
                   subtitle:  Padding(
                     padding:  EdgeInsets.only(top: 16.h,bottom: 16.h),
-                    child: Text("Build your career with ghada mohamed",
+                    child: Text(note.subtitle,
                         style: TextStyle(color: Colors.black.withOpacity(.5),fontSize: 20.sp)),
                   ),
                   trailing: IconButton(
@@ -42,7 +44,7 @@ class NoteItem extends StatelessWidget {
               Padding(
                 padding:  EdgeInsets.only(right: 24),
                 child: Text(
-                  "May15,2024",
+                 note.data,
                   style: TextStyle(color: Colors.black.withOpacity(.5)),
                 ),
               ),

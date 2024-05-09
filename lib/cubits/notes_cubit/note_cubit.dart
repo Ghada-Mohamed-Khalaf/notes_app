@@ -7,7 +7,7 @@ import 'package:notes_app/views/constant.dart';
 
 class NoteCubit extends Cubit<NoteState> {
 
-  NoteCubit() :super(NoteInitial()) {
+NoteCubit() :super(NoteInitial()) {
     // TODO: implement NoteCubit
     throw UnimplementedError();
   }

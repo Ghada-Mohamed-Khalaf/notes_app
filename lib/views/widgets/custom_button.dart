@@ -2,16 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:notes_app/views/constant.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomButton extends StatefulWidget {
   const CustomButton({super.key, this.onTap, this.isLoading = false});
 
   final void Function()?onTap;
   final bool isLoading;
 
   @override
+  State<CustomButton> createState() => _CustomButtonState();
+}
+
+class _CustomButtonState extends State<CustomButton> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Container(
 
         height: 55.h,
@@ -19,7 +24,7 @@ class CustomButton extends StatelessWidget {
           color: kPrimaryColor,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: Center(child: isLoading ? const SizedBox(
+        child: Center(child: widget.isLoading ? const SizedBox(
           height: 20,
           width: 20,
           child: CircularProgressIndicator(

@@ -5,7 +5,7 @@ import 'package:notes_app/views/widgets/custom_text_field.dart';
 
 class EditNoteViewBody  extends StatelessWidget {
   const EditNoteViewBody ({super.key});
-
+final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return  Padding(

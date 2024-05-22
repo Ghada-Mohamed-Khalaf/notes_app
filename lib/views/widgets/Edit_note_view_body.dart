@@ -18,9 +18,17 @@ final NoteModel note;
             icon: Icons.check,
           ),
           SizedBox(height: 50.h),
-          CustomTextField(hint: 'title',),
+          CustomTextField(
+          onChanged: (value) {
+            title=value;
+
+
+          } ,hint: 'title',),
           SizedBox(height: 50.h,),
-          CustomTextField(hint: 'content',maxLines: 5,),
+          CustomTextField(onChanged: (value){
+            content=value;n
+          },
+            hint: 'content',maxLines: 5,),
 
         ],
 

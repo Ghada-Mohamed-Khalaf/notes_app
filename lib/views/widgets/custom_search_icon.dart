@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSearchIcon extends StatelessWidget {
-  const CustomSearchIcon({super.key, required this.icon, });
+  const CustomSearchIcon({super.key, required this.icon, void Function()? onPressed, });
  final IconData icon;
 
   @override

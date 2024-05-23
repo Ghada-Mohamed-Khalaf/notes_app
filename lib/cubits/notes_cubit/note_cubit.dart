@@ -34,4 +34,5 @@ NoteCubit() :super(NoteInitial()) {
   }
 
 
-}
+
+
